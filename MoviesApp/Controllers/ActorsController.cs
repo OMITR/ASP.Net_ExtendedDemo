@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -13,23 +15,20 @@ namespace MoviesApp.Controllers
     {
         private readonly MoviesContext _context;
         private readonly ILogger<HomeController> _logger;
+        private readonly IMapper _mapper;
 
-        public ActorsController(MoviesContext context, ILogger<HomeController> logger)
+        public ActorsController(MoviesContext context, ILogger<HomeController> logger, IMapper mapper)
         {
             _context = context;
             _logger = logger;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            return View(_context.Actors.Select(m => new ActorViewModel
-            {
-                ActorId = m.ActorId,
-                FirstName = m.FirstName,
-                LastName = m.LastName,
-                BirthDate = m.BirthDate
-            }).ToList());
+            var actors = _mapper.Map<IEnumerable<Actor>, IEnumerable<ActorViewModel>>(_context.Actors.ToList());
+            return View(actors);
         }
 
         [HttpGet]
@@ -40,13 +39,7 @@ namespace MoviesApp.Controllers
                 return NotFound();
             }
 
-            var viewModel = _context.Actors.Where(m => m.ActorId == id).Select(m => new ActorViewModel
-            {
-                ActorId = m.ActorId,
-                FirstName = m.FirstName,
-                LastName = m.LastName,
-                BirthDate = m.BirthDate
-            }).FirstOrDefault();
+            var viewModel = _mapper.Map<ActorViewModel>(_context.Actors.FirstOrDefault(m => m.ActorId == id));
 
             if (viewModel == null)
             {
@@ -68,12 +61,7 @@ namespace MoviesApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(new Actor
-                {
-                    FirstName = inputModel.FirstName,
-                    LastName = inputModel.LastName,
-                    BirthDate = inputModel.BirthDate
-                });
+                _context.Add(_mapper.Map<Actor>(inputModel));
                 _context.SaveChanges();
 
                 return RedirectToAction(nameof(Index));
@@ -89,12 +77,7 @@ namespace MoviesApp.Controllers
                 return NotFound();
             }
 
-            var editModel = _context.Actors.Where(m => m.ActorId == id).Select(m => new EditActorViewModel
-            {
-                FirstName = m.FirstName,
-                LastName = m.LastName,
-                BirthDate = m.BirthDate
-            }).FirstOrDefault();
+            var editModel = _mapper.Map<EditActorViewModel>(_context.Actors.FirstOrDefault(m => m.ActorId == id));
 
             if (editModel == null)
             {
@@ -112,14 +95,8 @@ namespace MoviesApp.Controllers
             {
                 try
                 {
-                    var actor = new Actor
-                    {
-                        ActorId = id,
-                        FirstName = editModel.FirstName,
-                        LastName = editModel.LastName,
-                        BirthDate = editModel.BirthDate
-                    };
-
+                    var actor = _mapper.Map<Actor>(editModel);
+                    actor.ActorId = id;
                     _context.Update(actor);
                     _context.SaveChanges();
                 }
@@ -147,12 +124,7 @@ namespace MoviesApp.Controllers
                 return NotFound();
             }
 
-            var deleteModel = _context.Actors.Where(m => m.ActorId == id).Select(m => new DeleteActorViewModel
-            {
-                FirstName = m.FirstName,
-                LastName = m.LastName,
-                BirthDate = m.BirthDate
-            }).FirstOrDefault();
+            var deleteModel = _mapper.Map<DeleteActorViewModel>(_context.Actors.FirstOrDefault(m => m.ActorId == id));
 
             if (deleteModel == null)
             {

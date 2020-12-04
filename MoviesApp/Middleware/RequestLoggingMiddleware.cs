@@ -18,9 +18,19 @@ namespace MoviesApp.Middleware
 
         public async Task Invoke(HttpContext httpContext, ILogger<RequestLoggingMiddleware> logger)
         {
-            logger.LogTrace($"Request: {httpContext.Request.Path} Method: {httpContext.Request.Method}");
-            await _next(httpContext);
+            try
+            {
+                await _next(httpContext);
+            }
+            finally
+            {
+                if (httpContext.Request.Path.Value.Contains("/Actors"))
+                {
+                    logger.LogInformation("Request {method} {url}",
+                    httpContext.Request.Method,
+                    httpContext.Request.Path.Value);
+                }
+            }
         }
-
     }
 }

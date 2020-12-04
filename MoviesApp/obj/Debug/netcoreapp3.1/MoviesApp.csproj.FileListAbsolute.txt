@@ -86,8 +86,6 @@ C:\Users\goldl\Desktop\Новая папка (2)\MoviesApp\MoviesApp\obj\Debug\n
 C:\Users\goldl\Desktop\Новая папка (2)\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\MoviesApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\MoviesApp.AssemblyInfoInputs.cache
 C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\MoviesApp.AssemblyInfo.cs
-C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\MoviesApp.csproj.CoreCompileInputs.cache
-C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\MoviesApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\MoviesApp.RazorAssemblyInfo.cache
 C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\MoviesApp.RazorAssemblyInfo.cs
 C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\MoviesApp.dll
@@ -175,3 +173,7 @@ C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\D
 C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\Razor\Views\Actors\Edit.cshtml.g.cs
 C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\Razor\Views\Actors\Index.cshtml.g.cs
 C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\MoviesApp.csprojAssemblyReference.cache
+C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\MoviesApp.csproj.CoreCompileInputs.cache
+C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\MoviesApp.MvcApplicationPartsAssemblyInfo.cache

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "67Ab3210mKPqk48BblvHHrUZNodfHNT/BNuRanvCxEu1DG2bXostnp/22ZPm+WbzXiYKbXV16vHPswX1cG78oA==",
+  "dgSpecHash": "Bb5R+67iokyjFxXVDQAWYpSggx1aXhqzwvnUJkJufm3oY/o4g0lyXZ0mEO24EM+UPE2dJvagaoMQ0In7aElBmw==",
   "success": true,
   "projectFilePath": "C:\\Users\\goldl\\Desktop\\University\\Programming\\Examples\\MoviesApp\\MoviesApp\\MoviesApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\goldl\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\goldl\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\goldl\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\goldl\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\goldl\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
@@ -70,7 +72,7 @@
     "C:\\Users\\goldl\\.nuget\\packages\\system.private.datacontractserialization\\4.3.0\\system.private.datacontractserialization.4.3.0.nupkg.sha512",
     "C:\\Users\\goldl\\.nuget\\packages\\system.private.uri\\4.3.2\\system.private.uri.4.3.2.nupkg.sha512",
     "C:\\Users\\goldl\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
-    "C:\\Users\\goldl\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
+    "C:\\Users\\goldl\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\goldl\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "C:\\Users\\goldl\\.nuget\\packages\\system.reflection.emit.lightweight\\4.3.0\\system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
     "C:\\Users\\goldl\\.nuget\\packages\\system.reflection.extensions\\4.3.0\\system.reflection.extensions.4.3.0.nupkg.sha512",
