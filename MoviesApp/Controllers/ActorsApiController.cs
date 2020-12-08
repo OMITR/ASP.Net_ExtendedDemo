@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -69,13 +67,9 @@ namespace MoviesApp.Controllers
             catch (DbUpdateException)
             {
                 if (!ActorExists(id))
-                {
                     return BadRequest();
-                }
                 else
-                {
                     throw;
-                }
             }
         }
 
@@ -83,7 +77,8 @@ namespace MoviesApp.Controllers
         public ActionResult<DeleteMovieViewModel> DeleteMovie(int id)
         {
             var actor = _context.Actors.Find(id);
-            if (actor == null) return NotFound();
+            if (actor == null) 
+                return NotFound();
             _context.Actors.Remove(actor);
             _context.SaveChanges();
             return Ok(_mapper.Map<DeleteMovieViewModel>(actor));

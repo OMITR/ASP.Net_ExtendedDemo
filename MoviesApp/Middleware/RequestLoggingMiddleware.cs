@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace MoviesApp.Middleware
@@ -24,12 +21,8 @@ namespace MoviesApp.Middleware
             }
             finally
             {
-                if (httpContext.Request.Path.Value.Contains("/Actors"))
-                {
-                    logger.LogInformation("Request {method} {url}",
-                    httpContext.Request.Method,
-                    httpContext.Request.Path.Value);
-                }
+                if (httpContext.Request.Path.Value.Contains("Actors"))
+                    logger.LogTrace($"Request - [{httpContext.Request.Path}] Method - [{httpContext.Request.Method}]");
             }
         }
     }

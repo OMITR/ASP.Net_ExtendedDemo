@@ -35,16 +35,12 @@ namespace MoviesApp.Controllers
         public IActionResult Details(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var viewModel = _mapper.Map<ActorViewModel>(_context.Actors.FirstOrDefault(m => m.ActorId == id));
 
             if (viewModel == null)
-            {
                 return NotFound();
-            }
 
             return View(viewModel);
         }
@@ -73,16 +69,12 @@ namespace MoviesApp.Controllers
         public IActionResult Edit(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var editModel = _mapper.Map<EditActorViewModel>(_context.Actors.FirstOrDefault(m => m.ActorId == id));
 
             if (editModel == null)
-            {
                 return NotFound();
-            }
 
             return View(editModel);
         }
@@ -103,13 +95,9 @@ namespace MoviesApp.Controllers
                 catch (DbUpdateException)
                 {
                     if (!ActorExists(id))
-                    {
                         return NotFound();
-                    }
                     else
-                    {
                         throw;
-                    }
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -120,16 +108,12 @@ namespace MoviesApp.Controllers
         public IActionResult Delete(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var deleteModel = _mapper.Map<DeleteActorViewModel>(_context.Actors.FirstOrDefault(m => m.ActorId == id));
 
             if (deleteModel == null)
-            {
                 return NotFound();
-            }
 
             return View(deleteModel);
         }

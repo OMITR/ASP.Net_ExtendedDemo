@@ -24,7 +24,6 @@ namespace MoviesApp.Controllers
             _mapper = mapper;
         }
 
-        // GET: Movies
         [HttpGet]
         public IActionResult Index()
         {
@@ -32,35 +31,26 @@ namespace MoviesApp.Controllers
             return View(movies);
         }
 
-        // GET: Movies/Details/5
         [HttpGet]
         public IActionResult Details(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var viewModel = _mapper.Map<MovieViewModel>(_context.Movies.FirstOrDefault(m => m.Id == id));
 
             if (viewModel == null)
-            {
                 return NotFound();
-            }
 
             return View(viewModel);
         }
         
-        // GET: Movies/Create
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Movies/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("Title,ReleaseDate,Genre,Price")] InputMovieViewModel inputModel)
@@ -76,27 +66,19 @@ namespace MoviesApp.Controllers
         }
 
         [HttpGet]
-        // GET: Movies/Edit/5
         public IActionResult Edit(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var editModel = _mapper.Map<EditMovieViewModel>(_context.Movies.FirstOrDefault(m => m.Id == id));
 
             if (editModel == null)
-            {
                 return NotFound();
-            }
             
             return View(editModel);
         }
 
-        // POST: Movies/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, [Bind("Title,ReleaseDate,Genre,Price")] EditMovieViewModel editModel)
@@ -113,13 +95,9 @@ namespace MoviesApp.Controllers
                 catch (DbUpdateException)
                 {
                     if (!MovieExists(id))
-                    {
                         return NotFound();
-                    }
                     else
-                    {
                         throw;
-                    }
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -127,25 +105,19 @@ namespace MoviesApp.Controllers
         }
         
         [HttpGet]
-        // GET: Movies/Delete/5
         public IActionResult Delete(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var deleteModel = _mapper.Map<DeleteMovieViewModel>(_context.Movies.FirstOrDefault(m => m.Id == id));
 
             if (deleteModel == null)
-            {
                 return NotFound();
-            }
 
             return View(deleteModel);
         }
         
-        // POST: Movies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
