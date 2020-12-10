@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MoviesApp.Data;
 using MoviesApp.Middleware;
+using MoviesApp.Service;
 
 namespace MoviesApp
 {
@@ -31,7 +32,7 @@ namespace MoviesApp
 
             services.AddAutoMapper(typeof(Startup));
 
-
+            services.AddScoped<IActorService, ActorService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

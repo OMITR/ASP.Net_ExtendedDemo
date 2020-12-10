@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
 using MoviesApp.Models;
+using MoviesApp.Service.DTO.Mappers;
 
 namespace MoviesApp.ViewModels.Mappers
 {
@@ -17,10 +13,10 @@ namespace MoviesApp.ViewModels.Mappers
             CreateMap<Movie, EditMovieViewModel>().ReverseMap();
             CreateMap<Movie, MovieViewModel>();
 
-            CreateMap<Actor, InputActorViewModel>().ReverseMap();
-            CreateMap<Actor, DeleteActorViewModel>().ReverseMap();
-            CreateMap<Actor, EditActorViewModel>().ReverseMap();
-            CreateMap<Actor, ActorViewModel>().ReverseMap();
+            CreateMap<ActorDto, InputActorViewModel>().ReverseMap();
+            CreateMap<ActorDto, DeleteActorViewModel>(); ;
+            CreateMap<ActorDto, EditActorViewModel>().ReverseMap();
+            CreateMap<ActorDto, ActorViewModel>();
         }
     }
 }
