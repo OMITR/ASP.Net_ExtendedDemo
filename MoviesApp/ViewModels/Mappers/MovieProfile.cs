@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using MoviesApp.Models;
 using MoviesApp.Service.DTO.Mappers;
+using MoviesApp.ViewModels.Actors;
+using MoviesApp.ViewModels.Movies;
 
 namespace MoviesApp.ViewModels.Mappers
 {
@@ -14,7 +16,7 @@ namespace MoviesApp.ViewModels.Mappers
             CreateMap<Movie, MovieViewModel>();
 
             CreateMap<ActorDto, InputActorViewModel>().ReverseMap();
-            CreateMap<ActorDto, DeleteActorViewModel>(); ;
+            CreateMap<ActorDto, DeleteActorViewModel>();
             CreateMap<ActorDto, EditActorViewModel>().ReverseMap();
             CreateMap<ActorDto, ActorViewModel>();
         }

@@ -3,6 +3,7 @@ using System.Globalization;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MoviesApp.Data;
 using MoviesApp.Middleware;
+using MoviesApp.Models;
 using MoviesApp.Service;
 
 namespace MoviesApp
@@ -33,6 +35,13 @@ namespace MoviesApp
             services.AddAutoMapper(typeof(Startup));
 
             services.AddScoped<IActorService, ActorService>();
+
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                options.Password.RequireNonAlphanumeric = false;
+            })
+                .AddEntityFrameworkStores<MoviesContext>()
+                .AddTokenProvider<DataProtectorTokenProvider<ApplicationUser>>(TokenOptions.DefaultProvider);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -48,6 +57,7 @@ namespace MoviesApp
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
             
             
