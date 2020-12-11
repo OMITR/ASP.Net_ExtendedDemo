@@ -12,14 +12,12 @@ namespace MoviesApp.Controllers
             _logger = logger;
         }
         
-        // GET: /
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
         
-        // GET: Home/Privacy
         [HttpGet]
         public IActionResult Privacy()
         {

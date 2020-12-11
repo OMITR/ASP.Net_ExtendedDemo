@@ -43,9 +43,7 @@ namespace MoviesApp.Controllers
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
-            {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
-            }
 
             var model = new IndexViewModel
             {
@@ -64,15 +62,11 @@ namespace MoviesApp.Controllers
         public async Task<IActionResult> Index(IndexViewModel model)
         {
             if (!ModelState.IsValid)
-            {
                 return View(model);
-            }
 
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
-            {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
-            }
 
             var email = user.Email;
             if (model.Email != email)
@@ -103,15 +97,11 @@ namespace MoviesApp.Controllers
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
-            {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
-            }
 
             var hasPassword = await _userManager.HasPasswordAsync(user);
             if (!hasPassword)
-            {
                 return RedirectToAction(nameof(SetPassword));
-            }
 
             var model = new ChangePasswordViewModel { StatusMessage = StatusMessage };
             return View(model);
@@ -122,15 +112,11 @@ namespace MoviesApp.Controllers
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
         {
             if (!ModelState.IsValid)
-            {
                 return View(model);
-            }
 
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
-            {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
-            }
 
             var changePasswordResult = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
             if (!changePasswordResult.Succeeded)
@@ -151,16 +137,12 @@ namespace MoviesApp.Controllers
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
-            {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
-            }
 
             var hasPassword = await _userManager.HasPasswordAsync(user);
 
             if (hasPassword)
-            {
                 return RedirectToAction(nameof(ChangePassword));
-            }
 
             var model = new SetPasswordViewModel { StatusMessage = StatusMessage };
             return View(model);
@@ -171,15 +153,11 @@ namespace MoviesApp.Controllers
         public async Task<IActionResult> SetPassword(SetPasswordViewModel model)
         {
             if (!ModelState.IsValid)
-            {
                 return View(model);
-            }
 
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
-            {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
-            }
 
             var addPasswordResult = await _userManager.AddPasswordAsync(user, model.NewPassword);
             if (!addPasswordResult.Succeeded)
@@ -199,9 +177,7 @@ namespace MoviesApp.Controllers
         private void AddErrors(IdentityResult result)
         {
             foreach (var error in result.Errors)
-            {
                 ModelState.AddModelError(string.Empty, error.Description);
-            }
         }
 
         #endregion

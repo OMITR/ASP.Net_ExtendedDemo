@@ -31,9 +31,7 @@ namespace MoviesApp.Service
         {
             var actor = _context.Actors.Find(actorId);
             if (actor == null)
-            {
                 return null;
-            }
 
             _context.Actors.Remove(actor);
             _context.SaveChanges();
@@ -54,9 +52,7 @@ namespace MoviesApp.Service
         public ActorDto UpdateActor(ActorDto actorDto)
         {
             if (actorDto.ActorId == null)
-            {
                 return null;
-            }
 
             try
             {

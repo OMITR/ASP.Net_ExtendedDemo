@@ -180,7 +180,6 @@ C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\bin\D
 C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\MoviesApp.csproj.CoreCompileInputs.cache
 C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\MoviesApp.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\AccessDenied.cshtml.g.cs
 C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\goldl\Desktop\University\Programming\Examples\MoviesApp\MoviesApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\SignedOut.cshtml.g.cs

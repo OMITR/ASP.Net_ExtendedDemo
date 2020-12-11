@@ -43,7 +43,7 @@ namespace MoviesApp.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateActor(int id, ActorDto editDto)
+        public IActionResult UpdateActor(ActorDto editDto)
         {
             var actor = _service.UpdateActor(editDto);
 

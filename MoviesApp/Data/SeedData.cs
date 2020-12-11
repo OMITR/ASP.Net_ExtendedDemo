@@ -15,10 +15,9 @@ namespace MoviesApp.Data
                 serviceProvider.GetRequiredService<
                     DbContextOptions<MoviesContext>>()))
             {
-                // Look for any movies.
                 if (context.Movies.Any())
                 {
-                    return;   // DB has been seeded
+                    return;
                 }
                 
                 context.Movies.AddRange(
@@ -63,9 +62,7 @@ namespace MoviesApp.Data
             var roleManager = serviceProvider.GetService<RoleManager<IdentityRole>>();
 
             if (!roleManager.RoleExistsAsync("Admin").Result)
-            {
                 roleManager.CreateAsync(new IdentityRole { Name = "Admin" }).Wait();
-            }
 
             if (userManager.FindByEmailAsync("admin@example.com").Result == null)
             {
@@ -80,9 +77,7 @@ namespace MoviesApp.Data
                 IdentityResult result = userManager.CreateAsync(user, "P@ssw0rd").Result;
 
                 if (result.Succeeded)
-                {
                     userManager.AddToRoleAsync(user, "Admin").Wait();
-                }
             }
         }
     }
